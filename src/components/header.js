@@ -31,34 +31,34 @@ const inputElement = () => {
   return inputContainer;
 };
 
-function searchCurrency() {
+async function searchCurrency() {
   const searchBar = document.querySelector('input');
-  getData(searchBar.value).then(data => {
-    const currenciesArr = Object.entries(data.conversion_rates);
-    const currenciesObj = currenciesArr.map((element) => ({
-      currency: element[0],
-      value: element[1],
-    }));
+  const data = await getData(searchBar.value);
+  const currenciesArr = Object.entries(data.conversion_rates);
+  const currenciesObj = currenciesArr.map((element) => ({
+    currency: element[0],
+    value: element[1],
+  }));
 
-    const rout = document.querySelector('#router');
-    rout.innerHTML = '';
+  const rout = document.querySelector('#router');
+  rout.innerHTML = '';
 
-    const list = createElement(['flex', 'flex-wrap', 'justify-center', 'p-6', 'gap-2'], 'ul');
+  const list = createElement(['flex', 'flex-wrap', 'justify-center', 'p-6', 'gap-2'], 'ul');
 
-    const subtitle = createElement(['text-center', 'text-xl', 'font-bold', 'mt-8'], 'h2');
-    subtitle.innerText = `Valores referentes a 1 `;
+  const subtitle = createElement(['text-center', 'text-xl', 'font-bold', 'mt-8'], 'h2');
+  subtitle.innerText = `Valores referentes a 1 `;
 
-    const currencySelected = createElement(['uppercase'], 'span');
-    currencySelected.innerText = searchBar.value;
+  const currencySelected = createElement(['uppercase'], 'span');
+  currencySelected.innerText = searchBar.value;
 
-    subtitle.appendChild((currencySelected));
+  subtitle.appendChild((currencySelected));
 
-    currenciesObj.forEach(({ currency, value }) => {
-      list.appendChild(currencyItem(currency, value));
-    });
-
-    [subtitle, list].forEach((e) => rout.appendChild(e))
+  currenciesObj.forEach(({ currency, value }) => {
+    list.appendChild(currencyItem(currency, value));
   });
+
+  [subtitle, list].forEach((e) => rout.appendChild(e))
+    ;
 }
 
 const searchBtnElement = () => {
