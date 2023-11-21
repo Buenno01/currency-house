@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [],
+  content: [
+    './src/**/*.js',
+    './src/*.js',
+    './*.html',
+  ],
   theme: {
     colors: {
       'my-green': '#96EB95',
@@ -11,7 +15,15 @@ export default {
       'my-input': 'rgba(var(--input-color), 0.1)',
       'my-yellow': '#FFE713',
     },
-    extend: {},
+    extend: {
+      height: {
+        '48px': '48px',
+      },
+      width: {
+        '170px': '170px',
+        '200px': '200px',
+      }
+    },
   },
   plugins: [],
 }

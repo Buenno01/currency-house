@@ -1,32 +1,18 @@
 import './style.css'
-import { getData } from './services/fetchApi'
-import { createElement } from './util/createElement'
-import { currencyItem } from './components/currencyItem'
+import { headerComponent } from './components/header'
+import { createElement } from './util/createElement';
 
-function searchCurrency() {
-  const searchBar = document.querySelector('input');
-  getData(searchBar.value).then(data => {
-    const currenciesArr = Object.entries(data.conversion_rates);
-    const currenciesObj = currenciesArr.map((element) => ({
-      currency: element[0],
-      value: element[1],
-    }));
+const app = document.querySelector('#app');
+app.classList.add('bg-my-background');
+app.classList.add('min-h-screen');
+app.classList.add('flex');
+app.classList.add('justify-center');
 
-    const rout = document.querySelector('#router');
-    rout.innerHTML = '';
-    const list = createElement(['currency-list'], 'ul');
-    const subtitle = createElement([], 'h2');
-    subtitle.innerText = `Valores referentes a 1`
-    currenciesObj.forEach(({ currency, value }) => {
-      list.appendChild(currencyItem(currency, value));
-    });
+const router = createElement(['bg-my-box', 'rounded-xl', 'flex', 'flex-col'], 'section');
+router.id = 'router';
 
-    [subtitle, list].forEach((e) => rout.appendChild(e))
-  });
-}
+const container = createElement(['container', 'flex', 'flex-col'], 'div');
+container.appendChild(headerComponent());
+container.appendChild(router);
 
-const searchBtn = document.querySelector('button');
-searchBtn.addEventListener('click', searchCurrency)
-
-
-
+app.appendChild(container);

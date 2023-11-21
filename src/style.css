@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
 
-body {
+:root {
   font-family: 'Fira Code', monospace;
+  color: white;
 }
 
 /*
@@ -440,6 +441,11 @@ video {
   display: none;
 }
 
+:root {
+  --box-color: 255, 255, 255;
+  --input-color: 217, 217, 217;
+}
+
 *, ::before, ::after{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -538,4 +544,260 @@ video {
   --tw-backdrop-opacity:  ;
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
+}
+
+.container{
+  width: 100%;
+}
+
+@media (min-width: 640px){
+  .container{
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px){
+  .container{
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px){
+  .container{
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px){
+  .container{
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px){
+  .container{
+    max-width: 1536px;
+  }
+}
+
+.absolute{
+  position: absolute;
+}
+
+.relative{
+  position: relative;
+}
+
+.bottom-3{
+  bottom: 0.75rem;
+}
+
+.bottom-0{
+  bottom: 0px;
+}
+
+.my-8{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.mt-8{
+  margin-top: 2rem;
+}
+
+.mt-3{
+  margin-top: 0.75rem;
+}
+
+.mb-1{
+  margin-bottom: 0.25rem;
+}
+
+.mt-4{
+  margin-top: 1rem;
+}
+
+.mt-auto{
+  margin-top: auto;
+}
+
+.block{
+  display: block;
+}
+
+.flex{
+  display: flex;
+}
+
+.h-48px{
+  height: 48px;
+}
+
+.h-6{
+  height: 1.5rem;
+}
+
+.min-h-screen{
+  min-height: 100vh;
+}
+
+.w-170px{
+  width: 170px;
+}
+
+.w-6{
+  width: 1.5rem;
+}
+
+.w-full{
+  width: 100%;
+}
+
+.w-200px{
+  width: 200px;
+}
+
+.flex-col{
+  flex-direction: column;
+}
+
+.flex-wrap{
+  flex-wrap: wrap;
+}
+
+.justify-center{
+  justify-content: center;
+}
+
+.justify-between{
+  justify-content: space-between;
+}
+
+.gap-2{
+  gap: 0.5rem;
+}
+
+.gap-3{
+  gap: 0.75rem;
+}
+
+.rounded{
+  border-radius: 0.25rem;
+}
+
+.rounded-xl{
+  border-radius: 0.75rem;
+}
+
+.bg-my-background{
+  --tw-bg-opacity: 1;
+  background-color: rgb(40 44 51 / var(--tw-bg-opacity));
+}
+
+.bg-my-box{
+  background-color: rgba(var(--box-color), 0.06);
+}
+
+.bg-my-green{
+  --tw-bg-opacity: 1;
+  background-color: rgb(150 235 149 / var(--tw-bg-opacity));
+}
+
+.bg-my-input{
+  background-color: rgba(var(--input-color), 0.1);
+}
+
+.p-1{
+  padding: 0.25rem;
+}
+
+.p-2{
+  padding: 0.5rem;
+}
+
+.p-6{
+  padding: 1.5rem;
+}
+
+.px-3{
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.px-2{
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.py-4{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.pt-4{
+  padding-top: 1rem;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.align-baseline{
+  vertical-align: baseline;
+}
+
+.text-4xl{
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.text-base{
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.text-sm{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.text-xs{
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.text-xl{
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.font-bold{
+  font-weight: 700;
+}
+
+.font-semibold{
+  font-weight: 600;
+}
+
+.uppercase{
+  text-transform: uppercase;
+}
+
+.capitalize{
+  text-transform: capitalize;
+}
+
+.text-my-background{
+  --tw-text-opacity: 1;
+  color: rgb(40 44 51 / var(--tw-text-opacity));
+}
+
+.text-my-green{
+  --tw-text-opacity: 1;
+  color: rgb(150 235 149 / var(--tw-text-opacity));
+}
+
+.text-my-yellow{
+  --tw-text-opacity: 1;
+  color: rgb(255 231 19 / var(--tw-text-opacity));
 }
